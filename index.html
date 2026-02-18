@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scoop & Go | Professional Dog Poo Removal – Merseyside & Cheshire</title>
+    <meta name="description" content="Professional dog poo removal service covering Merseyside and Cheshire. Regular garden clean-ups, one-off visits, and commercial services.">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --green: #2e7d32;
+            --green-dark: #1b5e20;
+            --green-light: #e8f5e9;
+            --brown: #5d4037;
+            --brown-light: #efebe9;
+            --gold: #f9a825;
+            --white: #ffffff;
+            --grey-50: #fafafa;
+            --grey-100: #f5f5f5;
+            --grey-600: #757575;
+            --grey-800: #424242;
+            --grey-900: #212121;
+            --shadow: 0 2px 12px rgba(0,0,0,0.08);
+            --shadow-lg: 0 8px 30px rgba(0,0,0,0.12);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: var(--grey-800);
+            line-height: 1.6;
+        }
+
+        /* NAV */
+        nav {
+            position: fixed; top: 0; width: 100%; z-index: 1000;
+            background: var(--white);
+            box-shadow: var(--shadow);
+        }
+        .nav-inner {
+            max-width: 1100px; margin: 0 auto;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0.75rem 1.5rem;
+        }
+        .logo {
+            font-size: 1.4rem; font-weight: 800; color: var(--green);
+            text-decoration: none; display: flex; align-items: center; gap: 0.4rem;
+        }
+        .logo span { color: var(--brown); }
+        .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+        .nav-links a {
+            text-decoration: none; color: var(--grey-800); font-weight: 500;
+            font-size: 0.95rem; transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--green); }
+        .hamburger { display: none; background: none; border: none; cursor: pointer; font-size: 1.5rem; }
+
+        /* HERO */
+        .hero {
+            padding: 8rem 1.5rem 4rem;
+            background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 100%);
+            color: var(--white); text-align: center;
+        }
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800;
+            margin-bottom: 1rem; line-height: 1.15;
+        }
+        .hero p {
+            font-size: 1.15rem; max-width: 600px; margin: 0 auto 2rem;
+            opacity: 0.92;
+        }
+        .btn {
+            display: inline-block; padding: 0.85rem 2rem;
+            background: var(--gold); color: var(--grey-900);
+            text-decoration: none; border-radius: 6px;
+            font-weight: 700; font-size: 1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: none; cursor: pointer;
+        }
+        .btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+        .btn-outline {
+            background: transparent; border: 2px solid var(--white); color: var(--white);
+            margin-left: 0.75rem;
+        }
+        .btn-outline:hover { background: var(--white); color: var(--green-dark); }
+
+        /* SECTIONS */
+        section { padding: 4.5rem 1.5rem; }
+        .container { max-width: 1100px; margin: 0 auto; }
+        .section-title {
+            text-align: center; font-size: 1.9rem; font-weight: 800;
+            color: var(--grey-900); margin-bottom: 0.5rem;
+        }
+        .section-subtitle {
+            text-align: center; color: var(--grey-600);
+            margin-bottom: 3rem; font-size: 1.05rem;
+        }
+
+        /* SERVICES */
+        .services { background: var(--grey-50); }
+        .services-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+        .service-card {
+            background: var(--white); border-radius: 10px; padding: 2rem;
+            box-shadow: var(--shadow); text-align: center;
+            transition: transform 0.2s;
+        }
+        .service-card:hover { transform: translateY(-4px); }
+        .service-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+        .service-card h3 { font-size: 1.15rem; margin-bottom: 0.5rem; color: var(--green-dark); }
+        .service-card p { font-size: 0.95rem; color: var(--grey-600); }
+
+        /* AREAS */
+        .areas { background: var(--white); }
+        .areas-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .area-group h3 {
+            font-size: 1.15rem; color: var(--green); margin-bottom: 0.75rem;
+            padding-bottom: 0.5rem; border-bottom: 2px solid var(--green-light);
+        }
+        .area-group ul {
+            list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem;
+        }
+        .area-group li {
+            background: var(--green-light); color: var(--green-dark);
+            padding: 0.35rem 0.85rem; border-radius: 20px;
+            font-size: 0.9rem; font-weight: 500;
+        }
+
+        /* WHY US */
+        .why-us { background: var(--brown-light); }
+        .benefits-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+        }
+        .benefit { text-align: center; padding: 1.5rem; }
+        .benefit-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+        .benefit h3 { font-size: 1.05rem; margin-bottom: 0.4rem; color: var(--brown); }
+        .benefit p { font-size: 0.9rem; color: var(--grey-600); }
+
+        /* FAQ */
+        .faq { background: var(--grey-50); }
+        .faq-list { max-width: 750px; margin: 0 auto; }
+        .faq-item {
+            background: var(--white); border-radius: 8px;
+            margin-bottom: 0.75rem; box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+        .faq-question {
+            width: 100%; padding: 1.15rem 1.5rem;
+            background: none; border: none; cursor: pointer;
+            display: flex; justify-content: space-between; align-items: center;
+            font-size: 1rem; font-weight: 600; color: var(--grey-900);
+            text-align: left;
+        }
+        .faq-question::after {
+            content: '+'; font-size: 1.4rem; color: var(--green);
+            transition: transform 0.3s;
+        }
+        .faq-item.active .faq-question::after { content: '−'; }
+        .faq-answer {
+            max-height: 0; overflow: hidden; transition: max-height 0.3s ease;
+        }
+        .faq-answer p {
+            padding: 0 1.5rem 1.15rem; color: var(--grey-600);
+            font-size: 0.95rem; line-height: 1.7;
+        }
+
+        /* CONTACT */
+        .contact { background: var(--white); }
+        .contact-wrapper {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
+            max-width: 900px; margin: 0 auto;
+        }
+        .contact-info h3 { color: var(--green-dark); margin-bottom: 1rem; font-size: 1.2rem; }
+        .contact-info p { margin-bottom: 0.75rem; font-size: 0.95rem; }
+        .contact-info a { color: var(--green); text-decoration: none; }
+        .contact-detail { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem; }
+        .form-group { margin-bottom: 1rem; }
+        .form-group label {
+            display: block; font-weight: 600; margin-bottom: 0.3rem;
+            font-size: 0.9rem; color: var(--grey-800);
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%; padding: 0.7rem 0.9rem;
+            border: 1.5px solid #ddd; border-radius: 6px;
+            font-size: 0.95rem; font-family: inherit;
+            transition: border-color 0.2s;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none; border-color: var(--green);
+        }
+        .form-group textarea { resize: vertical; min-height: 100px; }
+        .form-status {
+            display: none; padding: 0.75rem; border-radius: 6px;
+            margin-top: 1rem; font-size: 0.95rem; text-align: center;
+        }
+        .form-status.success { display: block; background: var(--green-light); color: var(--green-dark); }
+        .form-status.error { display: block; background: #fce4ec; color: #c62828; }
+
+        /* FOOTER */
+        footer {
+            background: var(--grey-900); color: var(--grey-100);
+            text-align: center; padding: 2rem 1.5rem;
+            font-size: 0.9rem;
+        }
+        footer a { color: var(--gold); text-decoration: none; }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+            .hamburger { display: block; }
+            .nav-links {
+                display: none; position: absolute; top: 100%; left: 0;
+                width: 100%; background: var(--white); flex-direction: column;
+                padding: 1rem 1.5rem; box-shadow: var(--shadow);
+            }
+            .nav-links.open { display: flex; }
+            .contact-wrapper { grid-template-columns: 1fr; }
+            .btn-outline { margin-left: 0; margin-top: 0.5rem; }
+            .hero { padding: 7rem 1.5rem 3rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+    <div class="nav-inner">
+        <a href="#" class="logo">🐾 Scoop <span>&amp; Go</span></a>
+        <button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle menu">☰</button>
+        <ul class="nav-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#areas">Areas</a></li>
+            <li><a href="#why-us">Why Us</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="container">
+        <h1>Professional Dog Poo Removal<br>Across Merseyside &amp; Cheshire</h1>
+        <p>We take the mess off your hands — and your lawn. Regular clean-ups, one-off visits, and commercial services so you can enjoy your outdoor space again.</p>
+        <a href="#contact" class="btn">Get a Free Quote</a>
+        <a href="#services" class="btn btn-outline">Our Services</a>
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+    <div class="container">
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-subtitle">Reliable, discreet, and thorough — every time</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🏡</div>
+                <h3>Regular Garden Clean-Up</h3>
+                <p>Weekly or fortnightly visits to keep your garden spotless. We scoop, bag, and remove — you just enjoy the space.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">✨</div>
+                <h3>One-Off Deep Clean</h3>
+                <p>Moving house, hosting a party, or just need a fresh start? We'll blitz your garden and leave it pristine.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🏢</div>
+                <h3>Commercial &amp; Landlord Services</h3>
+                <p>Parks, shared grounds, rental properties, and communal gardens. Tailored schedules to suit your needs.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- AREAS -->
+<section class="areas" id="areas">
+    <div class="container">
+        <h2 class="section-title">Areas We Cover</h2>
+        <p class="section-subtitle">Serving homes and businesses across Merseyside and Cheshire</p>
+        <div class="areas-grid">
+            <div class="area-group">
+                <h3>Merseyside</h3>
+                <ul>
+                    <li>Liverpool</li>
+                    <li>Birkenhead</li>
+                    <li>Southport</li>
+                    <li>St Helens</li>
+                    <li>Bootle</li>
+                    <li>Wallasey</li>
+                    <li>Crosby</li>
+                    <li>Formby</li>
+                    <li>Huyton</li>
+                    <li>Kirkby</li>
+                    <li>Bebington</li>
+                    <li>Prescot</li>
+                    <li>Maghull</li>
+                    <li>Heswall</li>
+                    <li>West Kirby</li>
+                </ul>
+            </div>
+            <div class="area-group">
+                <h3>Cheshire</h3>
+                <ul>
+                    <li>Chester</li>
+                    <li>Warrington</li>
+                    <li>Crewe</li>
+                    <li>Macclesfield</li>
+                    <li>Ellesmere Port</li>
+                    <li>Widnes</li>
+                    <li>Runcorn</li>
+                    <li>Northwich</li>
+                    <li>Nantwich</li>
+                    <li>Winsford</li>
+                    <li>Congleton</li>
+                    <li>Wilmslow</li>
+                    <li>Knutsford</li>
+                    <li>Frodsham</li>
+                    <li>Neston</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-us" id="why-us">
+    <div class="container">
+        <h2 class="section-title">Why Choose Scoop &amp; Go?</h2>
+        <p class="section-subtitle">Trusted by hundreds of customers across the region</p>
+        <div class="benefits-grid">
+            <div class="benefit">
+                <div class="benefit-icon">⏰</div>
+                <h3>Flexible Scheduling</h3>
+                <p>Weekly, fortnightly, or one-off. We work around your diary.</p>
+            </div>
+            <div class="benefit">
+                <div class="benefit-icon">♻️</div>
+                <h3>Eco-Friendly Disposal</h3>
+                <p>All waste is disposed of responsibly and in line with local regulations.</p>
+            </div>
+            <div class="benefit">
+                <div class="benefit-icon">💷</div>
+                <h3>Affordable Prices</h3>
+                <p>Competitive rates with no hidden fees. Get a free, no-obligation quote.</p>
+            </div>
+            <div class="benefit">
+                <div class="benefit-icon">🔒</div>
+                <h3>Fully Insured</h3>
+                <p>Peace of mind with full public liability insurance on every visit.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+    <div class="container">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Everything you need to know</p>
+        <div class="faq-list">
+            <div class="faq-item">
+                <button class="faq-question">How does the service work?</button>
+                <div class="faq-answer">
+                    <p>It's simple — book online or give us a ring, and we'll arrange a visit at a time that suits you. We let ourselves into your garden (no need to be home), scoop and bag all the mess, then take it away for responsible disposal. You'll come home to a clean garden every time.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">How much does it cost?</button>
+                <div class="faq-answer">
+                    <p>Prices depend on garden size, number of dogs, and how often you'd like us to visit. Most regular domestic clean-ups start from just £8 per visit. Get in touch for a free, no-obligation quote tailored to your needs.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Do I need to be at home?</button>
+                <div class="faq-answer">
+                    <p>Not at all. As long as we can access your garden safely (e.g. via a side gate), we're happy to carry out the clean-up while you're out. Many of our customers are at work during visits.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">How often should I book a clean-up?</button>
+                <div class="faq-answer">
+                    <p>For most households with one or two dogs, a weekly visit keeps things fresh. Fortnightly works well if your dog mainly does its business on walks. We can advise what's best once we see your garden.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">What happens to the waste?</button>
+                <div class="faq-answer">
+                    <p>All waste is double-bagged and disposed of in accordance with local authority guidelines. We never leave anything behind. Our methods are eco-friendly and fully compliant with waste disposal regulations.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Do you cover my area?</button>
+                <div class="faq-answer">
+                    <p>We cover all of Merseyside and Cheshire, including Liverpool, Chester, Warrington, Southport, St Helens, Birkenhead, and many more towns and villages. If you're unsure, just ask — we may still be able to help.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Is your service discreet?</button>
+                <div class="faq-answer">
+                    <p>Absolutely. We use unmarked vehicles and work quickly and quietly. Your neighbours won't know a thing — unless you recommend us to them!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+    <div class="container">
+        <h2 class="section-title">Get in Touch</h2>
+        <p class="section-subtitle">Request a free quote or ask us anything</p>
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <h3>Contact Details</h3>
+                <div class="contact-detail">📧 <a href="mailto:simonwilbraham@sky.com">simonwilbraham@sky.com</a></div>
+                <div class="contact-detail">📍 Covering Merseyside &amp; Cheshire</div>
+                <br>
+                <h3>Our Hours</h3>
+                <p>Monday – Friday: 8:00am – 6:00pm</p>
+                <p>Saturday: 9:00am – 4:00pm</p>
+                <p>Sunday: Closed</p>
+                <br>
+                <h3>Quick Response</h3>
+                <p>We aim to reply to all enquiries within 24 hours. For urgent requests, please mention it in your message.</p>
+            </div>
+            <div>
+                <form id="contact-form" action="https://formsubmit.co/simonwilbraham@sky.com" method="POST">
+                    <!-- FormSubmit config -->
+                    <input type="hidden" name="_subject" value="New enquiry from Scoop & Go website">
+                    <input type="hidden" name="_captcha" value="true">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="text" name="_honey" style="display:none">
+                    <input type="hidden" name="_next" value="">
+
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service Required</label>
+                        <select id="service" name="service">
+                            <option value="">-- Please select --</option>
+                            <option value="Regular Clean-Up">Regular Garden Clean-Up</option>
+                            <option value="One-Off Deep Clean">One-Off Deep Clean</option>
+                            <option value="Commercial / Landlord">Commercial / Landlord Service</option>
+                            <option value="Other">Other / Not Sure</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" required placeholder="Tell us about your garden, number of dogs, and your postcode..."></textarea>
+                    </div>
+                    <button type="submit" class="btn" style="width:100%; text-align:center;">Send Enquiry</button>
+                </form>
+                <div class="form-status" id="form-status"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>&copy; <span id="year"></span> Scoop &amp; Go — Professional Dog Poo Removal. Merseyside &amp; Cheshire.</p>
+    <p style="margin-top:0.5rem; opacity:0.7;">Keeping gardens clean, one scoop at a time.</p>
+</footer>
+
+<script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const item = btn.parentElement;
+            const answer = item.querySelector('.faq-answer');
+            const isActive = item.classList.contains('active');
+
+            // Close all
+            document.querySelectorAll('.faq-item').forEach(i => {
+                i.classList.remove('active');
+                i.querySelector('.faq-answer').style.maxHeight = null;
+            });
+
+            // Open clicked (if wasn't already open)
+            if (!isActive) {
+                item.classList.add('active');
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+            }
+        });
+    });
+
+    // Mobile nav — close on link click
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.remove('open');
+        });
+    });
+</script>
+
+</body>
+</html>
