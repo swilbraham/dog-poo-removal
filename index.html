@@ -59,9 +59,11 @@
 
         /* HERO */
         .hero {
-            padding: 8rem 1.5rem 4rem;
-            background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 100%);
+            padding: 10rem 1.5rem 5rem;
+            background: linear-gradient(135deg, rgba(27,94,32,0.82) 0%, rgba(46,125,50,0.78) 100%),
+                        url('https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=1600&q=80') center/cover no-repeat;
             color: var(--white); text-align: center;
+            position: relative;
         }
         .hero h1 {
             font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800;
@@ -105,14 +107,33 @@
             gap: 1.5rem;
         }
         .service-card {
-            background: var(--white); border-radius: 10px; padding: 2rem;
+            background: var(--white); border-radius: 10px;
             box-shadow: var(--shadow); text-align: center;
-            transition: transform 0.2s;
+            transition: transform 0.2s; overflow: hidden;
         }
         .service-card:hover { transform: translateY(-4px); }
-        .service-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+        .service-card img {
+            width: 100%; height: 180px; object-fit: cover;
+        }
+        .service-card-body { padding: 1.5rem; }
+        .service-icon { font-size: 2.5rem; margin-bottom: 0.5rem; }
         .service-card h3 { font-size: 1.15rem; margin-bottom: 0.5rem; color: var(--green-dark); }
         .service-card p { font-size: 0.95rem; color: var(--grey-600); }
+
+        /* DOG GALLERY */
+        .gallery { background: var(--white); padding: 0; overflow: hidden; }
+        .gallery-strip {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+        }
+        .gallery-strip img {
+            width: 100%; height: 280px; object-fit: cover;
+            transition: transform 0.4s;
+        }
+        .gallery-strip img:hover { transform: scale(1.05); }
+        @media (max-width: 768px) {
+            .gallery-strip { grid-template-columns: repeat(2, 1fr); }
+            .gallery-strip img { height: 180px; }
+        }
 
         /* AREAS */
         .areas { background: var(--white); }
@@ -227,7 +248,7 @@
             .nav-links.open { display: flex; }
             .contact-wrapper { grid-template-columns: 1fr; }
             .btn-outline { margin-left: 0; margin-top: 0.5rem; }
-            .hero { padding: 7rem 1.5rem 3rem; }
+            .hero { padding: 8rem 1.5rem 3.5rem; }
         }
     </style>
 </head>
@@ -265,21 +286,40 @@
         <p class="section-subtitle">Reliable, discreet, and thorough — every time</p>
         <div class="services-grid">
             <div class="service-card">
-                <div class="service-icon">🏡</div>
-                <h3>Regular Garden Clean-Up</h3>
-                <p>Weekly or fortnightly visits to keep your garden spotless. We scoop, bag, and remove — you just enjoy the space.</p>
+                <img src="https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?w=600&q=80" alt="Happy golden retriever relaxing in a garden" loading="lazy">
+                <div class="service-card-body">
+                    <div class="service-icon">🏡</div>
+                    <h3>Regular Garden Clean-Up</h3>
+                    <p>Weekly or fortnightly visits to keep your garden spotless. We scoop, bag, and remove — you just enjoy the space.</p>
+                </div>
             </div>
             <div class="service-card">
-                <div class="service-icon">✨</div>
-                <h3>One-Off Deep Clean</h3>
-                <p>Moving house, hosting a party, or just need a fresh start? We'll blitz your garden and leave it pristine.</p>
+                <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=600&q=80" alt="Cute dog playing on a clean lawn" loading="lazy">
+                <div class="service-card-body">
+                    <div class="service-icon">✨</div>
+                    <h3>One-Off Deep Clean</h3>
+                    <p>Moving house, hosting a party, or just need a fresh start? We'll blitz your garden and leave it pristine.</p>
+                </div>
             </div>
             <div class="service-card">
-                <div class="service-icon">🏢</div>
-                <h3>Commercial &amp; Landlord Services</h3>
-                <p>Parks, shared grounds, rental properties, and communal gardens. Tailored schedules to suit your needs.</p>
+                <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=600&q=80" alt="Two dogs running happily in a park" loading="lazy">
+                <div class="service-card-body">
+                    <div class="service-icon">🏢</div>
+                    <h3>Commercial &amp; Landlord Services</h3>
+                    <p>Parks, shared grounds, rental properties, and communal gardens. Tailored schedules to suit your needs.</p>
+                </div>
             </div>
         </div>
+    </div>
+</section>
+
+<!-- DOG GALLERY -->
+<section class="gallery">
+    <div class="gallery-strip">
+        <img src="https://images.unsplash.com/photo-1477884213360-7e9d7dcc8f9b?w=500&q=80" alt="Cute puppy sitting on grass" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?w=500&q=80" alt="Golden retriever in a garden" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1534361960057-19889db9621e?w=500&q=80" alt="Happy dog running outdoors" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?w=500&q=80" alt="Adorable dog with a bow tie" loading="lazy">
     </div>
 </section>
 
@@ -433,6 +473,8 @@
                 <br>
                 <h3>Quick Response</h3>
                 <p>We aim to reply to all enquiries within 24 hours. For urgent requests, please mention it in your message.</p>
+                <br>
+                <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=400&q=80" alt="Cute dog waiting patiently" style="width:100%; border-radius:10px; box-shadow: var(--shadow);" loading="lazy">
             </div>
             <div>
                 <form id="contact-form" action="https://formsubmit.co/simonwilbraham@sky.com" method="POST">
